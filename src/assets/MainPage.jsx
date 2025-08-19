@@ -48,7 +48,7 @@ const MainPage = () => {
     initial='hidden'
     animate='visible'>
     <motion.div className='flex items-center space-x-5'>
-      <motion.img src='/B-logo.png'
+      <motion.img src='./B-logo.png'
       className='w-20 aspect-square rounded-md'
       initial={{ x: "-100vw", rotate: 0 }}
       animate={{ x: 0, rotate: [0, 90, 180, 270,360] }}
@@ -103,25 +103,25 @@ const MainPage = () => {
         target="_blank"
         rel="noopener noreferrer"
         className=" w-7 h-7 hover:opacity-50">
-        <img src='/twitter.png'/>
+        <img src='./twitter.png'/>
       </a>
          <a href="https://www.instagram.com/_blaicy"
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 hover:opacity-50">
-        <img src='/instagram.png' />
+        <img src='./instagram.png' />
       </a>
       <a href="https://www.linkedin.com/in/blaicymokaya"
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 hover:opacity-50">
-        <img src='/linkedin.png'/>
+        <img src='./linkedin.png'/>
       </a>
       <a href="https://github.com/Blaicy"
         target="_blank"
         rel="noopener noreferrer"
         className=" w-8 h-8 hover:opacity-50">
-        <img src='/github.png'/>
+        <img src='./github.png'/>
       </a>
       </div>
     </motion.div>
