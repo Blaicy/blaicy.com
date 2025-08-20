@@ -19,7 +19,7 @@ const Loader = ({ onFinish }) => {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-indigo-950 z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50">
       <motion.img
         src="./1.png"
         alt="Logo"

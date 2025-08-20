@@ -21,6 +21,8 @@ const letterVariant = {
   visible: { opacity: 1, y: 0 },
 };
 
+const text = "Full-Stack Developer & UI/UX Designer";
+
 const buttonVariant = {
   hover: {
     scale: 1.1,
@@ -31,8 +33,8 @@ const buttonVariant = {
 
 const MainPage = () => {
   return (
-    <div className="p-2 sm:p-3 lg:p-3 min-h-screen">
-      <motion.div className="flex flex-col sm:flex-row items-center sm:space-x-4 m:space-y-0">
+    <div className="p-5 sm:p-10 lg:p-20 min-h-screen">
+      <motion.div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-3 sm:space-y-0">
         <motion.img 
           src="./1.png"
           className="w-16 sm:w-20 lg:w-28"
@@ -51,46 +53,43 @@ const MainPage = () => {
         </motion.h1>
       </motion.div>
       <motion.div 
-        className="min-h-screen flex flex-col items-center sm:space-y-3"
+        className="min-h-screen flex flex-col items-center space-y-2 sm:space-y-8"
         variants={bodyVariant}
         initial="hidden"
         animate="visible">
-        <div className="text-center">
-          <motion.h1
-            className="font-bold text-lg sm:text-2xl lg:text-4xl text-indigo-900 leading-snug tracking-tight"
-            variants={sentenceVariant}
-            initial="hidden"
-            animate="visible">
-            {"Full-Stack Developer & UI/UX Designer".split("").map((char, index) => (
-              <motion.span key={index} variants={letterVariant}>
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.h1>
-          
-        </div>
-        <motion.ul className="flex flex-wrap justify-center gap-3 text-sm sm:text-lg text-gray-800">
-          <motion.li whileHover={{ scale: 1.1 }}>Developer</motion.li> |
-          <motion.li whileHover={{ scale: 1.1 }}>UI/UX Designer</motion.li> |
+        <motion.h1
+          className="font-bold text-2xl sm:text-3xl lg:text-4xl text-indigo-900 text-center"
+          variants={sentenceVariant}
+          initial="hidden"
+          animate="visible">
+          {text.split("").map((char, index) => (
+            <motion.span key={index} variants={letterVariant}>
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
+        </motion.h1>
+        <motion.ul className="flex flex-wrap justify-center gap-3 text-base sm:text-lg text-gray-800">
+          <motion.li whileHover={{ scale: 1.1 }}>Developer</motion.li>
+          <motion.li whileHover={{ scale: 1.1 }}>UI/UX Designer</motion.li>
           <motion.li whileHover={{ scale: 1.1 }}>Freelancer</motion.li>
         </motion.ul>
         <motion.div className="flex items-center space-x-2">
           <FaMapPin className="animate-bounce text-indigo-700" />
-          <motion.h3 className="text-white font-mono text-xs sm:text-base lg:text-lg">
+          <motion.h3 className="text-white font-mono text-sm sm:text-base lg:text-lg">
             Available for work
           </motion.h3>
         </motion.div>
-        <div className="text-center leading-relaxed sm:leading-loose font-medium text-sm sm:text-base lg:text-lg">
-          <p className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto">
+        <div className="text-center leading-relaxed font-medium text-base sm:text-lg lg:text-xl">
+          <p className="max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto">
             I am a passionate developer and UI/UX designer from Nakuru, Kenya.
           </p>
-          <p className="max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto">
+          <p className="max-w-lg sm:max-w-xl lg:max-w-2xl mx-auto">
             If you’re searching for someone who can bring ideas to life
           </p>
-          <p className="max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto">
+          <p className="max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
             through design, code, and product strategy,
           </p>
-          <p className="max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto">
+          <p className="max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
             I’ve got you covered.
           </p>
         </div>
@@ -112,6 +111,8 @@ const MainPage = () => {
             </motion.button>
           </Link>
         </div>
+
+        {/* Social Links */}
         <div className="flex flex-wrap justify-center space-x-4 mt-5">
           <a href="https://www.X.com/98_Howie" target="_blank" rel="noopener noreferrer" className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 hover:opacity-50">
             <img src="./social-media.png" />
