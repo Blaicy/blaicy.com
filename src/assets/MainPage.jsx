@@ -31,7 +31,7 @@ const buttonVariant = {
 
 const MainPage = () => {
   return (
-    <div className="p-2 sm:p-3 lg:p-3">
+    <div className="p-2 sm:p-3 lg:p-3 min-h-screen">
       <motion.div className="flex flex-col sm:flex-row items-center sm:space-x-4 m:space-y-0">
         <motion.img 
           src="./1.png"
@@ -61,23 +61,13 @@ const MainPage = () => {
             variants={sentenceVariant}
             initial="hidden"
             animate="visible">
-            {"Full-Stack Developer".split("").map((char, index) => (
+            {"Full-Stack Developer & UI/UX Designer".split("").map((char, index) => (
               <motion.span key={index} variants={letterVariant}>
                 {char === " " ? "\u00A0" : char}
               </motion.span>
             ))}
           </motion.h1>
-          <motion.h1
-            className="font-bold text-lg sm:text-2xl lg:text-4xl text-indigo-900 leading-snug tracking-tight"
-            variants={sentenceVariant}
-            initial="hidden"
-            animate="visible">
-            {"& UI/UX Designer".split("").map((char, index) => (
-              <motion.span key={index} variants={letterVariant}>
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.h1>
+          
         </div>
         <motion.ul className="flex flex-wrap justify-center gap-3 text-sm sm:text-lg text-gray-800">
           <motion.li whileHover={{ scale: 1.1 }}>Developer</motion.li> |

@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-    {!loadingDone && <Loader onFinish={() => setLoadingDone(true)} />}
+     {!loadingDone && <Loader onFinish={() => setLoadingDone(true)} />}
       {loadingDone && (
         <AnimatePresence mode="wait">
           <Routes>
