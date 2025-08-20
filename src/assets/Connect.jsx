@@ -1,134 +1,108 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useState, useEffect } from "react";
-import { IoMail } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 
 const Connect = () => {
   const [displayedText, setDisplayedText] = useState("");
   const text = "I  would love to hear from you — whether it is about work, ideas, or just a hello.";
-  const speed = 10; 
+  const speed = 50;
 
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + text.charAt(i));
       i++;
-      if (i >= text.length) {
-        clearInterval(interval);
-      }
+      if (i >= text.length) clearInterval(interval);
     }, speed);
 
     return () => clearInterval(interval);
   }, []);
+
   return (
-    <>
-    <section className="p-10"
-    initial={{opacity:0}}
-    animate={{opacity:1}}
-    transition={{delay:0.8, duration:1}}>
-      <motion.h1 className='font-semibold text-2xl flex justify-center mb-5'>Get In Touch</motion.h1>
-      <motion.div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-      
-      <motion.div initial={{x:'-100vw'}}
-      animate={{x:0, transition:{duration:0.5,delay:2}}}>
-      <form action="https://formspree.io/f/mblkvjlz" method="POST"
-      className='border-2 bg-purple-300 rounded-2xl p-2'>
-        <span className='flex items-center bg-white rounded-md m-3 p-2'>
-        <input type="text" name="name" placeholder="Full Name"
-          className="rounded-md w-full border border-gray-400 p-2"/>
-        </span>
-        <span className='flex items-center bg-white rounded-md m-3 p-2'>
-        <input type="email" name="email" placeholder="Your email"
-          className="rounded-md w-full border border-gray-400 p-2"/>
-        </span>
-        <span className='flex items-center bg-white rounded-md m-3'>
-        <textarea name="message" placeholder='Type your message here...' 
-        className= 'p-2 h-20 border-none border-gray-400 rounded-md w-full'/>
-        </span>
-        <span className="flex justify-center">
-          <button type='submit'
-            className={`bg-blue-950 flex items-center text-white rounded-md p-2 gap-2
-               m-2 hover:bg-gray-800
-            : "bg-blue-600 hover:bg-blue-700"} `}>
-           Submit <FaTelegramPlane /> </button></span>
-           <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html" />
-           </form>
-      </motion.div>
-           <div>
-            <motion.span className='flex m-2 space-x-1 items-center'
-              initial={{x:'100vw'}}
-              animate={{ x: 0, transition: { type: 'spring', stiffness: 30, delay: 1, duration: 2 } }}
-              whileHover={{ originX:0, scale: 1.2, transition: { duration: 0.2 } }}>
-              <IoMail />
-            <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=blaicymokaya@gmail.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-white hover:underline font-semibold">
-              blaicymokaya@gmail.com
-            </a></motion.span>
-            <motion.span className='flex m-2 space-x-1 items-center'
-            initial={{x:'100vw'}}
-            animate={{ x: 0, transition: { type: 'spring', stiffness: 30, delay: 1.5, duration: 1 } }}
-            whileHover={{originX:0, scale: 1.2, transition: { duration: 0.2 } }}>
-              <FaInstagram />
-              <a
-                href="https://www.instagram.com/_blaicy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white hover:underline font-semibold">
-                Instagram
-              </a>
-            </motion.span>
-            <motion.span className='flex m-2 space-x-1 items-center'
-            initial={{x:'100vw'}}
-            animate={{ x: 0, transition: { type: 'spring', stiffness: 30, delay: 2, duration: 1 } }}
-            whileHover={{originX:0, scale: 1.2, transition: { duration: 0.2 } }}>
-              <FaLinkedin />
-              <a 
-                href="https://www.linkedin.com/in/blaicymokaya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white hover:underline font-semibold">
-                Linked In
-              </a></motion.span>
-              <motion.span className='flex m-2 space-x-1 items-center'
-            initial={{x:'100vw'}}
-            animate={{ x: 0, transition: { type: 'spring', stiffness: 30, delay: 2.5, duration: 1 } }}
-            whileHover={{originX:0, scale: 1.2, transition: { duration: 0.2 } }}>
-              <FaGithub />
-              <a
-                href="https://github.com/Blaicy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white hover:underline font-semibold">
-                GitHub
-              </a></motion.span>
-              <motion.span className='flex m-2 space-x-1 items-center'
-            initial={{x:'100vw'}}
-            animate={{ x: 0, transition: { type: 'spring', stiffness: 30, delay: 3, duration: 1 } }}
-            whileHover={{originX:0, scale: 1.2, transition: { duration: 0.2 } }}>
-              <RiTwitterXFill />
-              <a
-                href="https://www.X.com/98_Howie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white hover:underline font-semibold">
-                X
-              </a></motion.span>
-           </div>
-           </motion.div>
-            <div className="m-5 text-center">
-              {displayedText}
-              <span className="animate-pulse">|</span>
+    <section className="relative min-h-screen m-3 md:m-5 p-5 md:p-10 bg-indigo-950 rounded-lg shadow-lg shadow-black">
+      <div className="hidden md:block absolute left-1/2 top-5 bottom-5 w-[2px] bg-black"></div>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 1 }}>
+        <div>
+          <motion.h1 className="font-bold text-2xl md:text-3xl flex justify-center md:justify-start mb-5 text-cyan-500">
+            Get In Touch
+          </motion.h1>
+          
+          <div className="flex flex-col space-y-4 font-mono text-base md:text-lg">
+            {[
+              { img: './email.png', label: "blaicymokaya@gmail.com", link: "https://mail.google.com/mail/?view=cm&fs=1&to=blaicymokaya@gmail.com" },
+              { img: './instagram.png', label: "Instagram", link: "https://www.instagram.com/_blaicy" },
+              { img: './linkedin.png', label: "LinkedIn", link: "https://www.linkedin.com/in/blaicymokaya" },
+              { img: './github.png', label: "GitHub", link: "https://github.com/Blaicy" },
+              { img: './social-media.png', label: "X", link: "https://www.X.com/98_Howie" }
+            ].map((item, idx) => (
+              <motion.span
+                key={idx}
+                className="flex items-center space-x-2"
+                initial={{ x: "100vw" }}
+                animate={{ x: 0, transition: { type: "spring", stiffness: 30, delay: 1 + idx * 0.5, duration: 1 } }}
+                whileHover={{ originX:0, scale: 1.1, transition: { duration: 0.2 } }}>
+                <img src={item.img} alt={item.label} className="w-6 h-6 md:w-7 md:h-7" />
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-amber-600 font-semibold">
+                  {item.label}
+                </a>
+              </motion.span>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center md:text-left text-neutral-400 text-sm md:text-lg font-medium font-mono px-3">
+            {displayedText}
+            <span className="animate-pulse"></span>
+          </div>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 2 } }}
+          className="w-full">
+          <motion.h1 className="font-bold text-2xl md:text-3xl flex justify-center md:justify-start mb-5 text-cyan-500">
+            Reach Out
+          </motion.h1>
+
+          <form
+            action="https://formspree.io/f/mblkvjlz"
+            method="POST"
+            className=" bg-orange-300 rounded-2xl p-4 md:p-6 space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              className="w-full border outline-none rounded-md p-2"
+              required/>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="w-full border outline-none rounded-md p-2"
+              required/>
+            <textarea
+              name="message"
+              placeholder="Type your message here..."
+              className="w-full h-28 border outline-none rounded-md p-2"
+              required></textarea>
+            <div className="flex justify-center items-center md:justify-start">
+              <button
+                type="submit"
+                className="bg-blue-950 flex items-center text-white rounded-md px-4 py-2 gap-2 hover:bg-cyan-600 transition">
+                Submit <FaTelegramPlane />
+              </button>
             </div>
-           </section>
-    </>
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html" />
+          </form>
+        </motion.div>
+      </motion.div>
+    </section>
   )
 }
 
