@@ -36,7 +36,7 @@ const MainPage = () => {
     <div className="p-5 sm:p-10 lg:p-20 min-h-screen">
       <motion.div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-3 sm:space-y-0">
         <motion.img 
-          src="./1.png"
+          src="./1.png" alt='Logo'
           className="w-16 sm:w-20 lg:w-28"
           initial={{ x: "-100vw", rotate: 0 }}
           animate={{ x: 0, rotate: [0, 90, 0, -90, 0] }}
@@ -112,19 +112,18 @@ const MainPage = () => {
           </Link>
         </div>
 
-        {/* Social Links */}
         <div className="flex flex-wrap justify-center space-x-4 mt-5">
           <a href="https://www.X.com/98_Howie" target="_blank" rel="noopener noreferrer" className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 hover:opacity-50">
-            <img src="./social-media.png" />
+            <img src="./social-media.png" alt='twitter' />
           </a>
           <a href="https://www.instagram.com/_blaicy" target="_blank" rel="noopener noreferrer" className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 hover:opacity-50">
-            <img src="./instagram.png" />
+            <img src="./instagram.png" alt='instagram'/>
           </a>
           <a href="https://www.linkedin.com/in/blaicymokaya" target="_blank" rel="noopener noreferrer" className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 hover:opacity-50">
-            <img src="./linkedin.png" />
+            <img src="./linkedin.png" alt='linkedIn'/>
           </a>
           <a href="https://github.com/Blaicy" target="_blank" rel="noopener noreferrer" className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 hover:opacity-50">
-            <img src="./github.png" />
+            <img src="./github.png" alt='github'/>
           </a>
         </div>
       </motion.div>

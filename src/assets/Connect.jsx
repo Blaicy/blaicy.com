@@ -33,11 +33,11 @@ const Connect = () => {
           
           <div className="flex flex-col space-y-4 font-mono text-base md:text-lg">
             {[
-              { img: '/email.png', label: "blaicymokaya@gmail.com", link: "https://mail.google.com/mail/?view=cm&fs=1&to=blaicymokaya@gmail.com" },
-              { img: '/instagram.png', label: "Instagram", link: "https://www.instagram.com/_blaicy" },
-              { img: '/linkedin.png', label: "LinkedIn", link: "https://www.linkedin.com/in/blaicymokaya" },
-              { img: '/github.png', label: "GitHub", link: "https://github.com/Blaicy" },
-              { img: '/social-media.png', label: "X", link: "https://www.X.com/98_Howie" }
+              { img: './email.png', label: "blaicymokaya@gmail.com", link: "https://mail.google.com/mail/?view=cm&fs=1&to=blaicymokaya@gmail.com" },
+              { img: './instagram.png', label: "Instagram", link: "https://instagram.com/_blaicy" },
+              { img: './linkedin.png', label: "LinkedIn", link: "https://linkedin.com/in/blaicymokaya" },
+              { img: './github.png', label: "GitHub", link: "https://github.com/Blaicy" },
+              { img: './social-media.png', label: "X", link: "https://X.com/98_Howie" }
             ].map((item, idx) => (
               <motion.span
                 key={idx}
@@ -98,7 +98,7 @@ const Connect = () => {
                 Submit <FaTelegramPlane />
               </button>
             </div>
-            <input type="hidden" name="_next" value="https://blaicy.com/thankyou.html" />
+            <input type="hidden" name="_next" value="https://blaicy.github.io/#/thankyou" />
           </form>
         </motion.div>
       </motion.div>
